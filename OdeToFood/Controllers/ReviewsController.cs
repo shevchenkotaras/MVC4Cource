@@ -23,7 +23,7 @@ namespace OdeToFood.Controllers
         {
             var model =
                 from r in _reviews
-                orderby r.Country
+                
                 select r;
 
             return View(model);
@@ -102,30 +102,30 @@ namespace OdeToFood.Controllers
 
         static List<RestaurantReview> _reviews = new List<RestaurantReview>
         {
-            new RestaurantReview
-            {
-                Id = 1,
-                Name = "Cinnamon",
-                City = "London",
-                Country = "UK",
-                Rating = 10,
-            },
-            new RestaurantReview
-            {
-                Id = 2,
-                Name = "Burger King",
-                City = "New York",
-                Country = "USA",
-                Rating = 10,
-            },
-            new RestaurantReview
-            {
-                Id = 3,
-                Name = "Puzata Hata",
-                City = "<script>alert('xss');<script>",
-                Country = "Ukraine",
-                Rating = 10,
-            }
+            //new RestaurantReview
+            //{
+            //    Id = 1,
+            //    Name = "Cinnamon",
+            //    City = "London",
+            //    Country = "UK",
+            //    Rating = 10,
+            //},
+            //new RestaurantReview
+            //{
+            //    Id = 2,
+            //    Name = "Burger King",
+            //    City = "New York",
+            //    Country = "USA",
+            //    Rating = 10,
+            //},
+            //new RestaurantReview
+            //{
+            //    Id = 3,
+            //    Name = "Puzata Hata",
+            //    City = "<script>alert('xss');<script>",
+            //    Country = "Ukraine",
+            //    Rating = 10,
+            //}
         };
     }
 }
