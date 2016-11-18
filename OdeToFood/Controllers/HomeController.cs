@@ -14,7 +14,7 @@ namespace OdeToFood.Controllers
         public ActionResult Index()
         {
             var model = _db.Restaurants.ToList();
-            return View();
+            return View(model);
         }
 
         public ActionResult About()
