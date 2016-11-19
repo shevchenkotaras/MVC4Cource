@@ -27,7 +27,7 @@ namespace OdeToFood.Migrations
                    Country = "Sweden",
                    Reviews =
                        new List<RestaurantReview> {
-                       new RestaurantReview { Rating = 9, Body="Great food!" }
+                       new RestaurantReview { Rating = 9, Body="Great food!", ReviewerName="Scott" }
                    }
                });
         }
