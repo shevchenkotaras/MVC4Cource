@@ -11,7 +11,7 @@ namespace OdeToFood.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
             ContextKey = "OdeToFood.Models.OdeToFoodDb";
         }
 
@@ -25,10 +25,10 @@ namespace OdeToFood.Migrations
                    Name = "Smaka",
                    City = "Gothenburg",
                    Country = "Sweden",
-                   //Reviews =
-                   //    new List<RestaurantReview> {
-                   //    new RestaurantReview { Rating = 9, Body="Great food!" }
-                   //}
+                   Reviews =
+                       new List<RestaurantReview> {
+                       new RestaurantReview { Rating = 9, Body="Great food!" }
+                   }
                });
         }
     }
