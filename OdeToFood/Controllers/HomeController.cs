@@ -26,6 +26,7 @@ namespace OdeToFood.Controllers
             var model = _db.Restaurants
                 .OrderByDescending(restaurant => restaurant.Reviews.Average(review => review.Rating))
                 .Where(restaurant => searchTerm == null || restaurant.Name.StartsWith(searchTerm))
+                .Take(10)
                 .Select(restaurant => new RestaurantListViewModel
                     {
                         Id = restaurant.Id,
@@ -34,6 +35,11 @@ namespace OdeToFood.Controllers
                         Country = restaurant.Country,
                         CountOfReviews = restaurant.Reviews.Count()
                     });
+
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("_Restaurants", model);
+            }
             return View(model);
         }
 
