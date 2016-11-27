@@ -8,8 +8,9 @@
     <input type="search" name="searchTerm" data-otf-autocomplete="@Url.Action("Autocomplete")"/>
     <br />
     <input type="submit" value="Search By Name" />
+   
 </form>
-
+@Html.Partial("_Restaurants", Model)
 @*@using(Ajax.BeginForm(
         new AjaxOptions
         {
@@ -24,4 +25,4 @@
         </div>
     }*@  
 
-@Html.Partial("_Restaurants", Model)
+
