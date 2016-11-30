@@ -7,6 +7,7 @@ using Microsoft.Owin.Security.Google;
 using Owin;
 using OdeToFood.Models;
 
+
 namespace OdeToFood
 {
     public partial class Startup
@@ -58,11 +59,13 @@ namespace OdeToFood
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "923650379838-n4cdfpqq20took7io9aao3tpd98smnfa.apps.googleusercontent.com",
+                ClientSecret = "5upRzU7cS3SB7ZgPNQ43XLl4"
+            });
+
+
         }
     }
 }
