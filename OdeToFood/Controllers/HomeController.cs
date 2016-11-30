@@ -27,19 +27,9 @@ namespace OdeToFood.Controllers
         }
 
         
-        [OutputCache(Duration = 120, VaryByHeader = "X-Requested-With", Location = OutputCacheLocation.Server)]
+        [OutputCache(CacheProfile ="Long", VaryByHeader = "X-Requested-With", Location = OutputCacheLocation.Server)]
         public ActionResult Index(string searchTerm = null, int page = 1)
-        {
-            //var model = from r in _db.Restaurants
-            //            orderby r.Reviews.Average(review => review.Rating) descending
-            //            select new RestaurantListViewModel{
-            //                Id = r.Id,
-            //                Name = r.Name,
-            //                City = r.City,
-            //                Country = r.Country,
-            //                CountOfReviews = r.Reviews.Count()
-            //            };
-
+        {           
             var model = _db.Restaurants
                 .OrderByDescending(restaurant => restaurant.Reviews.Average(review => review.Rating))
                 .Where(restaurant => searchTerm == null || restaurant.Name.StartsWith(searchTerm))                
